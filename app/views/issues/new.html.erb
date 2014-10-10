@@ -1,0 +1,19 @@
+<%= @page_title="Issue new items" %>
+<%= render(:partial=>'application/header') %>
+<%= form_for :items ,:url=>{:action=>'create'} do |f| %>
+<%= f.label :Issued_to %><br />
+<%= collection_select(:items, :id, @user, :id, :username, {:prompt => true}) %><br>
+<%= f.label :Category%><br />
+<%= collection_select(:items, :cat_id, @cat, :code, :catname, {:prompt => true}) %><br>
+<%= f.radio_button :stock, '1', :checked => true %> 
+<%= label :rtrn, 'Returnable' %>
+<%= f.radio_button :stock, '0' %>
+<%= label :rtrn, 'Non-Returnable' %><br>
+<%= f.label :Number %><br />
+<%= f.text_field :nos %><br>
+<%= submit_tag("Save changes")%>
+<% end %>
+
+
+
+

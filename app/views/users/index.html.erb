@@ -1,0 +1,12 @@
+<%= render(:partial=>'application/header') %>
+<% @user.each do |t| %>
+<ul>
+<li><%= t.username %></li>
+<li><%= t.email %></li>
+<li><%= t.active ? 'Yes' : 'No' %></li>
+<li><%= t.created_at %></li>
+<li><%= t.updated_at %></li>
+</ul>
+<% end %>
+<%= render(:partial=>'application/footer') %>
+

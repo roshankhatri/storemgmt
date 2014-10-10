@@ -1,0 +1,14 @@
+<% @page_title ="create todo" %>
+<%= render(:partial=>'application/header') %>
+<%= form_for :todo,:url=>{:action=>'create'} do |f| %>
+<%= f.label :Name %><br />
+<%= f.text_field :todoname %><br/>
+<%= f.radio_button :completed, '1', :checked => true %> 
+<%= label :completed_email, 'Complete' %>
+<%= f.radio_button :completed, '0' %>
+<%= label :completed_sms, 'Incomplete' %><br>
+<%= submit_tag("save") %>	
+<% end %>
+<%= render(:partial=>'application/header') %>
+
+  

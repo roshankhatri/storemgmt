@@ -1,0 +1,10 @@
+<% @page_title ="edit todo" %>
+<%= render(:partial=>'application/header') %>
+<%= form_for :todo,:url=>{:action=>'update',:id=>@todo.id} do |f| %>
+<%= f.label :Name %><br />
+<%= f.text_field :todoname %><br/>
+<%= f.label :Completed %><br />
+<%= f.text_field :completed %></br>
+<%= submit_tag("Update") %>	
+<% end %>
+<%= render(:partial=>'application/header') %>

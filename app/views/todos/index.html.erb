@@ -1,0 +1,33 @@
+<%= render(:partial=>'application/header') %>
+<div class="container">
+<div class="row">
+<div class="col-sm-1" id="tst">
+<%= link_to "Add", {:action=>'new'},:class=>'glyphicon glyphicon-plus btn btn-success btn-sm' %>
+</div>
+<div class="col-md-1" id="tst">
+<%= link_to " ASC", {:action=>'new'},:class=>'glyphicon glyphicon-sort-by-attributes btn btn-success btn-sm' %>
+</div>
+<div class="col-md-1" id="tst">
+<%= link_to " DESC", {:action=>'new'},:class=>'glyphicon glyphicon-sort-by-attributes-alt btn btn-success btn-sm' %>
+</div>
+<div class="col-md-1" id="tst">
+<%= link_to " completed", {:action=>'new'},:class=>'glyphicon glyphicon-th-list btn btn-success btn-sm' %>
+</div>
+</div>	
+<div class="row">
+<% @todo.each do |t| %>
+<div class="col-md-3">
+<div class="well">  
+<div class="col-sm-1 pull-right"><%= link_to "", {:action=>'edit',:id=>t.id},:class=>'glyphicon glyphicon-edit' %></div> 
+<div class="col-sm-1 pull-right"><%= link_to "", {:action=>'delete',:id=>t.id},:class=>'glyphicon glyphicon-remove' %>
+</div>
+<h4><span class="glyphicon glyphicon-bullhorn"></span> <%= t.todoname %></h4>
+<li>Completed = <%= t.completed ? 'Yes' : 'No' %></li>
+<li>Started at : <%= distance_of_time_in_words(Time.now, t.created_at)+" ago"%></li>
+<li>Completed at : <%= t.updated_at.strftime('%Y %m %d') %></li>
+</div>
+</div>
+<% end %>
+</div>
+</div> 
+<%= render(:partial=>'application/footer') %>

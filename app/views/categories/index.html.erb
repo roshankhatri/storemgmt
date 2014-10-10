@@ -1,0 +1,6 @@
+<%= render(:partial=>'application/header') %>
+<% @cat.each do |t| %>
+<li><%= t.code  %></li>
+<li><%=  t.catname%></li>	
+<% end %>
+

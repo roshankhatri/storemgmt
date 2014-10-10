@@ -1,0 +1,9 @@
+<%= render(:partial=>'application/header') %>
+<div class="container text-center">
+<%= form_for :todo,:url=>{:action=>'destroy',:id=>@todo.id} do |f| %>
+<p>Are you sure you want to delete this cannot be undone</p>	
+<%= submit_tag("OK",:class=>'btn btn-danger') %>	
+<% end %>
+</div>
+<%= render(:partial=>'application/footer') %>
+  

@@ -1,0 +1,6 @@
+<% if object && object.error.size > 0 %>
+<%=pluralize(object.error.size,"size") %> prohibited this record from saving
+<% object.errors.full messages.each do |msg|%>
+	<%= msg %>
+	<% end %>
+	<% end %>

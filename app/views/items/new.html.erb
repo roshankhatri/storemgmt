@@ -1,0 +1,19 @@
+<%= @page_title="Add new items" %>
+<%= render(:partial=>'application/header') %>
+<%= form_for :items ,:url=>{:action=>'create'} do |f| %>
+<%= f.label :Category%><br />
+<%= collection_select(:items, :cat_id, @cat, :code, :catname, {:prompt => true}) %><br>
+<%= f.label :name %><br />
+<%= f.text_field :itemname %><br>
+<%= f.radio_button :stock, '1', :checked => true %> 
+<%= label :rtrn, 'Stockable' %>
+<%= f.radio_button :stock, '0' %>
+<%= label :rtrn, 'Non-Stockable' %><br>
+<%= f.label :Number %><br />
+<%= f.text_field :nos %><br>
+<%= submit_tag("Save changes")%>
+<% end %>
+
+
+
+

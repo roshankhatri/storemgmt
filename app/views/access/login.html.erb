@@ -1,0 +1,10 @@
+<% @page_title='Login Page' %>
+<%= render(:partial=>'application/header') %>
+<%= form_tag(:action  =>'attempt_login') do %>
+<%= label_tag(:username) %>
+<%= text_field_tag(:username) %>
+<%= label_tag(:password) %>
+<%= password_field_tag(:password) %>
+<%= submit_tag("Login") %>
+<%= render(:partial=>'application/footer') %>
+<% end %>
